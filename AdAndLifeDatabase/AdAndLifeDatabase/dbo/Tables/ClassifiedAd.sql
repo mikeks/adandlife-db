@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[ClassifiedAd] (
+    [Id]                             INT            NOT NULL,
+    [Advertizer]                     NVARCHAR (500) NULL,
+    [RubricId]                       INT            NOT NULL,
+    [AdText]                         NVARCHAR (MAX) NOT NULL,
+    [IsBorder]                       BIT            NOT NULL,
+    [IsBold]                         BIT            NOT NULL,
+    [IsBackground]                   BIT            NOT NULL,
+    [IsCentered]                     BIT            NOT NULL,
+    [Info]                           NVARCHAR (MAX) NULL,
+    [IsPaid]                         BIT            NOT NULL,
+    [PaymentMethod]                  TINYINT        NULL,
+    [Price]                          MONEY          NULL,
+    [StartIssueNumber]               SMALLINT       NOT NULL,
+    [EndIssueNumber]                 SMALLINT       NULL,
+    [clasSM]                         NVARCHAR (5)   NULL,
+    [clasTimestamp]                  DATETIME       NOT NULL,
+    [StartIssueYear]                 INT            NULL,
+    [EndIssueYear]                   INT            NULL,
+    [WebsitePromitionPrice]          MONEY          NULL,
+    [WebsitePromotionExpirationDate] DATE           NULL,
+    CONSTRAINT [PK_ClassifiedAd] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_ClassifiedAd_ClassifiedRubric] FOREIGN KEY ([RubricId]) REFERENCES [dbo].[ClassifiedRubric] ([Id])
+);
+

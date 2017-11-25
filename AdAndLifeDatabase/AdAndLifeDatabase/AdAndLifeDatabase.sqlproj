@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>AdAndLifeDatabase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{c369f97f-3766-4382-86e9-5bec5f820b4f}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>AdAndLifeDatabase</RootNamespace>
+    <AssemblyName>AdAndLifeDatabase</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="ticket\" />
+    <Folder Include="ticket\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="ticket\Stored Procedures\" />
+    <Folder Include="ticket\User Defined Types\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\WebsiteNewspapers.sql" />
+    <Build Include="dbo\Tables\WebsiteArticle.sql" />
+    <Build Include="dbo\Tables\SyncLog.sql" />
+    <Build Include="dbo\Tables\ClassifiedRubricBaltimore.sql" />
+    <Build Include="dbo\Tables\ClassifiedRubric.sql" />
+    <Build Include="dbo\Tables\ClassifiedAdBaltimore.sql" />
+    <Build Include="dbo\Tables\ClassifiedAd.sql" />
+    <Build Include="ticket\Tables\TransactionLog.sql" />
+    <Build Include="ticket\Tables\TicketType.sql" />
+    <Build Include="ticket\Tables\SellTransaction.sql" />
+    <Build Include="ticket\Tables\SaleEvent.sql" />
+    <Build Include="ticket\Tables\EventLocation.sql" />
+    <Build Include="ticket\Tables\Tickets.sql" />
+    <Build Include="dbo\Stored Procedures\SaveWebsiteNewspaper.sql" />
+    <Build Include="dbo\Stored Procedures\SaveWebsiteArticle.sql" />
+    <Build Include="dbo\Stored Procedures\ExportWebsiteData.sql" />
+    <Build Include="dbo\Stored Procedures\ExportClassified.sql" />
+    <Build Include="ticket\Stored Procedures\CompeteSellingTransaction.sql" />
+    <Build Include="ticket\Stored Procedures\LogTransaction.sql" />
+    <Build Include="ticket\Stored Procedures\GetAvaliableTickets.sql" />
+    <Build Include="ticket\Stored Procedures\SaveSaleEvent.sql" />
+    <Build Include="ticket\Stored Procedures\DeleteTicket.sql" />
+    <Build Include="ticket\Stored Procedures\AddTicket.sql" />
+    <Build Include="ticket\Stored Procedures\GetAllTickets.sql" />
+    <Build Include="ticket\Stored Procedures\BeginSellingTransaction.sql" />
+    <Build Include="ticket\User Defined Types\Seat.sql" />
+    <Build Include="Security\ticket.sql" />
+    <Build Include="Security\aal.sql" />
+    <Build Include="dbo\Tables\SiteBanner.sql" />
+    <Build Include="dbo\Tables\MikeMoney.sql" />
+    <Build Include="dbo\Tables\ClassifiedMoney.sql" />
+    <Build Include="dbo\Tables\AdminLogin.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateClassifiedMoney.sql" />
+    <Build Include="dbo\Stored Procedures\SaveSiteBanner.sql" />
+    <Build Include="dbo\Stored Procedures\DoLogin.sql" />
+  </ItemGroup>
+</Project>
