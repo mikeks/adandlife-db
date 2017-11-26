@@ -16,7 +16,8 @@ CREATE PROCEDURE [ticket].[SaveSaleEvent]
 	@eventImage varchar(100),
 	@eventDate smalldatetime,
 	@urlName varchar(100),
-	@isAvaliable bit
+	@isAvaliable bit,
+	@ourShare tinyint
 )
 AS
 BEGIN
@@ -33,7 +34,8 @@ BEGIN
 			UrlName,
 			EventNameEng,
 			EventImage,
-			EventDate
+			EventDate,
+			OurShare
 		)
 		values (
 			@locationId,
@@ -43,7 +45,8 @@ BEGIN
 			@urlName,
 			@eventNameEng,
 			@eventImage,
-			@eventDate
+			@eventDate,
+			@ourShare
 		)
 
 		set @id = SCOPE_IDENTITY()
@@ -59,7 +62,8 @@ BEGIN
 			UrlName = @urlName,
 			EventNameEng = @eventNameEng,
 			EventImage = @eventImage,
-			EventDate = @eventDate
+			EventDate = @eventDate,
+			OurShare = @ourShare
 		where id = @id
 
 END

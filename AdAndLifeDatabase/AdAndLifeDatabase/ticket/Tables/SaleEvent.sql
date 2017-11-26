@@ -9,6 +9,7 @@
     [EventNameEng]     VARCHAR (100)  NOT NULL,
     [EventImage]       VARCHAR (100)  NOT NULL,
     [EventDate]        SMALLDATETIME  NOT NULL,
+    [OurShare]         TINYINT        CONSTRAINT [DF_SaleEvent_OurShare] DEFAULT ((10)) NOT NULL,
     CONSTRAINT [PK_SaleEvent] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_SaleEvent_EventLocation] FOREIGN KEY ([LocationId]) REFERENCES [ticket].[EventLocation] ([Id])
 );

@@ -15,6 +15,8 @@
 );
 
 
+
+
 GO
 CREATE UNIQUE NONCLUSTERED INDEX [IX_SellTransaction]
     ON [ticket].[SellTransaction]([EventId] ASC, [RedeemCode] ASC) WHERE ([RedeemCode] IS NOT NULL);

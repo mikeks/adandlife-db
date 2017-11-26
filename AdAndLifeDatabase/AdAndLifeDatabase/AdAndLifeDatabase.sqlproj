@@ -77,7 +77,6 @@
     <Build Include="ticket\Tables\TransactionLog.sql" />
     <Build Include="ticket\Tables\TicketType.sql" />
     <Build Include="ticket\Tables\SellTransaction.sql" />
-    <Build Include="ticket\Tables\SaleEvent.sql" />
     <Build Include="ticket\Tables\EventLocation.sql" />
     <Build Include="ticket\Tables\Tickets.sql" />
     <Build Include="dbo\Stored Procedures\SaveWebsiteNewspaper.sql" />
@@ -102,5 +101,6 @@
     <Build Include="dbo\Stored Procedures\UpdateClassifiedMoney.sql" />
     <Build Include="dbo\Stored Procedures\SaveSiteBanner.sql" />
     <Build Include="dbo\Stored Procedures\DoLogin.sql" />
+    <Build Include="ticket\Tables\SaleEvent.sql" />
   </ItemGroup>
 </Project>

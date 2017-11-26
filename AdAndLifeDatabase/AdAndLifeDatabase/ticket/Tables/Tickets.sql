@@ -13,6 +13,8 @@
 );
 
 
+
+
 GO
 CREATE UNIQUE NONCLUSTERED INDEX [IX_Tickets]
     ON [ticket].[Tickets]([EventId] ASC, [Seat] ASC);

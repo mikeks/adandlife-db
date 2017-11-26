@@ -6,3 +6,5 @@
     CONSTRAINT [FK_ButtonCode_SaleEvent] FOREIGN KEY ([EventId]) REFERENCES [ticket].[SaleEvent] ([Id]) ON DELETE CASCADE
 );
 
+
+
